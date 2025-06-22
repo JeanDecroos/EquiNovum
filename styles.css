@@ -82,7 +82,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 800;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
     background: var(--primary-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -94,6 +94,7 @@ h2 {
     font-weight: 700;
     margin-bottom: 1.5rem;
     position: relative;
+    letter-spacing: -0.01em;
 }
 
 h2::after {
@@ -111,11 +112,12 @@ h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--primary-medium);
     margin-bottom: 1rem;
+    letter-spacing: -0.01em;
 }
 
 p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-size: 1.125rem;
+    line-height: 1.7;
     margin-bottom: 1.5rem;
     color: var(--medium-gray);
 }
@@ -287,27 +289,35 @@ p {
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
     line-height: 1.6;
+    margin-bottom: 2rem;
+    color: var(--white);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-tagline {
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 1.5rem;
-    border-radius: 15px;
-    margin-bottom: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    display: inline-block;
+    box-shadow: var(--shadow-light);
+    backdrop-filter: blur(5px);
 }
 
 .hero-tagline p {
-    color: var(--white);
-    font-weight: 500;
-    margin: 0;
-    text-align: center;
     font-size: 1rem;
+    color: var(--white);
+    margin-bottom: 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.hero-tagline p strong {
+    color: var(--accent-gold);
 }
 
 .hero-stats {
@@ -572,8 +582,9 @@ p {
 }
 
 .problem-item p {
-    color: var(--medium-gray);
+    color: var(--dark-gray);
     line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* ===== ENHANCED TECHNOLOGY SECTION ===== */
@@ -648,8 +659,9 @@ p {
 }
 
 .tech-content p {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.95);
     line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* ===== ENHANCED COMPARISON SECTION ===== */
@@ -708,12 +720,25 @@ p {
 }
 
 .comparison-item li {
-    padding: 0.5rem 0;
-    font-size: 1rem;
-    color: var(--medium-gray);
+    padding: 0.6rem 0;
+    font-size: 1.05rem;
+    color: var(--dark-gray);
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.comparison-item li::before {
+    content: '\2022';
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent-green);
+    flex-shrink: 0;
+    line-height: 1;
+}
+
+.comparison-item.traditional li::before {
+    color: #dc3545;
 }
 
 /* ===== ENHANCED BENEFITS SECTION ===== */
@@ -786,8 +811,9 @@ p {
 }
 
 .benefit-card p {
-    color: var(--medium-gray);
+    color: var(--dark-gray);
     line-height: 1.7;
+    font-size: 1.05rem;
 }
 
 /* ===== ENHANCED ANIMATIONS ===== */
